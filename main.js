@@ -6,20 +6,21 @@ const FULL_HEART = '♥'
 let modal = document.querySelector('#modal')
 modal.setAttribute('class', 'hidden')
 
-function recognizingEvents() {
-  
-  function fillHeart() {
-    let heart = document.querySelector('.like-glyph')
-    heart = FULL_HEART
-    // heart.setAttribute('class', 'activated-heart') 
-  }
+let hearts = document.querySelectorAll('.like-glyph')
+function fillHeart() {
+  hearts.forEach((heart) => {
+  heart.addEventListener('click', recognizingEvents)
+})
+}
 
-  // heart.addEventListener('click', mimicServerCall())
-  // .then(fillHeart)
-  // .catch(() =&gt; {
+function recognizingEvents() {
+  mimicServerCall()
+  .then(fillHeart)
+  .catch(() =>; {
   // modal.classList.remove('hidden')
   // modal.
   // })
+
 }
 
 
