@@ -11,9 +11,11 @@ hideModal()
 
 let hearts = document.querySelectorAll('.like-glyph')
 function fillHeart() {
-  hearts.addEventListener('click', function(e) {
-    alert('We got to line 15')
-  })
+  hearts.forEach(addEventListener('click', function(h) {
+    debugger
+    h.innerHTML = FULL_HEART  
+    h.style.color = 'activated-heart'
+  }))
 }
 
 fillHeart()
