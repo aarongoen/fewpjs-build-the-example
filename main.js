@@ -18,7 +18,7 @@ function fillHeart() {
   })    
   )
 }
- fillHeart()
+fillHeart()
 
 function recognizingEvents() {
   mimicServerCall()
