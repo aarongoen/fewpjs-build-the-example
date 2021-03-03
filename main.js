@@ -11,14 +11,14 @@ hideModal()
 
 let hearts = document.querySelectorAll('.like-glyph')
 function fillHeart() {
-  hearts.forEach(addEventListener('click', function(h) {
-    debugger
-    h.innerHTML = FULL_HEART  
-    h.style.color = 'activated-heart'
-  }))
+   hearts.forEach(addEventListener('click', function(e) {
+    // debugger
+    e.innerHTML = FULL_HEART  
+    e.style.color = 'activated-heart'
+  })    
+  )
 }
-
-fillHeart()
+ fillHeart()
 
 function recognizingEvents() {
   mimicServerCall()
