@@ -4,25 +4,30 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 let modal = document.querySelector('#modal')
-modal.setAttribute('class', 'hidden')
+function hideModal() {
+  modal.setAttribute('class', 'hidden')
+}
+hideModal()
 
 let hearts = document.querySelectorAll('.like-glyph')
 function fillHeart() {
-  hearts.forEach((heart) => {
-  heart.addEventListener('click', recognizingEvents)
-})
+  hearts.addEventListener('click', function(e) {
+    alert('We got to line 15')
+  })
 }
+
+fillHeart()
 
 function recognizingEvents() {
   mimicServerCall()
   .then(fillHeart)
-  .catch(() =>; {
-  // modal.classList.remove('hidden')
-  // modal.
-  // })
-
+  .catch(flashError)
 }
 
+function flashError() {
+  let showModal = modal.classList.remove('hidden')
+  setTimeout(hideModal, 5000)
+}
 
 //------------------------------------------------------------------------------
 // Ignore after this point. Used only for demo purposes
